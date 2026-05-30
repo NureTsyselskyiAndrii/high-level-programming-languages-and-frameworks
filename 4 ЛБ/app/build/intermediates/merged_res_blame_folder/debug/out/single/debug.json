@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.example.hotel.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "com.example.hotel.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.hotel.app-merged_res-31:/layout_activity_bookings.xml.flat",
+        "source": "com.example.hotel.app-main-33:/layout/activity_bookings.xml"
+    },
+    {
+        "merged": "com.example.hotel.app-merged_res-31:/layout_activity_rooms.xml.flat",
+        "source": "com.example.hotel.app-main-33:/layout/activity_rooms.xml"
+    },
+    {
+        "merged": "com.example.hotel.app-merged_res-31:/layout_activity_add_booking.xml.flat",
+        "source": "com.example.hotel.app-main-33:/layout/activity_add_booking.xml"
+    }
+]

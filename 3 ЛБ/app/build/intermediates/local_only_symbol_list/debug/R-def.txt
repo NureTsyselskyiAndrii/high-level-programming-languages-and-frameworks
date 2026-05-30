@@ -1,0 +1,22 @@
+R_DEF: Internal format may change without notice
+local
+id btnBack
+id btnGuess
+id btnLeaderboard
+id btnNewGame
+id btnPlay
+id btnToLeaderboard
+id etGuess
+id etUsername
+id layoutHistory
+id layoutRows
+id tvAttempts
+id tvHint
+id tvResult
+id tvStats
+id tvUsername
+layout activity_game
+layout activity_leaderboard
+layout activity_main
+string app_name
+style Theme.NumGuess

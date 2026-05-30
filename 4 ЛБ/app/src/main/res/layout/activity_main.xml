@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#FAFAFA">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_main"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System Statistics"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#6200EE"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tvStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loading stats..."
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnRooms"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="View Rooms"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:textAllCaps="false"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnAddBooking"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="New Booking"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:textAllCaps="false"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnBookings"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Booking History"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:backgroundTint="#018786"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

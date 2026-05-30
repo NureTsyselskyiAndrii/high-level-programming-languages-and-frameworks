@@ -1,0 +1,62 @@
+{% extends 'transaction_app/base.html' %}
+{% block content %}
+<h2>Транзакції за категоріями</h2>
+
+{% for category in categories %}
+<h3>{{ category.name }}</h3>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Опис</th>
+                <th>Сума</th>
+                <th>Тип</th>
+                <th>Дата</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in category.transaction_set.all %}
+            <tr>
+                <td style="font-weight: 500;">{{ t.description }}</td>
+                <td style="font-weight: 600;">{{ t.amount }} грн</td>
+                <td><span class="{{ t.type }}">{{ t.get_type_display }}</span></td>
+                <td style="color: var(--text-muted);">{{ t.created_at|date:"d.m.Y H:i" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="empty-row">Немає транзакцій у цій категорії</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% empty %}
+<p style="color: var(--text-muted); font-style: italic; margin-bottom: 30px;">Категорії відсутні. Додайте їх через адмін-панель.</p>
+{% endfor %}
+
+{% if no_category %}
+<h3>Без категорії</h3>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Опис</th>
+                <th>Сума</th>
+                <th>Тип</th>
+                <th>Дата</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in no_category %}
+            <tr>
+                <td style="font-weight: 500;">{{ t.description }}</td>
+                <td style="font-weight: 600;">{{ t.amount }} грн</td>
+                <td><span class="{{ t.type }}">{{ t.get_type_display }}</span></td>
+                <td style="color: var(--text-muted);">{{ t.created_at|date:"d.m.Y H:i" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{% endblock %}

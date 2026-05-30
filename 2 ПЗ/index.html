@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Фото з мережі</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f0f0f0; }
+        .card { background: white; padding: 16px; display: inline-block;
+                border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .card img { display: block; }
+        .card p { margin: 8px 0 0; color: #555; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h1>Завантаження фото через fetch</h1>
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById('output');
+        output.textContent = 'Завантаження...';
+
+        fetch('https://picsum.photos/id/1/info')
+            .then(res => res.json())
+            .then(data => {
+                output.innerHTML = '';
+
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                const img = document.createElement('img');
+                img.src    = data.download_url;
+                img.alt    = `Фото автора ${data.author}`;
+                img.width  = 400;
+
+                const caption = document.createElement('p');
+                caption.textContent = `Автор: ${data.author} | ${data.width}×${data.height}`;
+
+                card.appendChild(img);
+                card.appendChild(caption);
+                output.appendChild(card);
+            })
+            .catch(err => {
+                output.textContent = `Помилка: ${err.message}`;
+            });
+    </script>
+</body>
+</html>

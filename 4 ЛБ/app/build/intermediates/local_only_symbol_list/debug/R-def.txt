@@ -1,0 +1,32 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+id btnAddBooking
+id btnBack
+id btnBookings
+id btnRooms
+id btnSave
+id etCheckIn
+id etCheckOut
+id layoutBookings
+id layoutRooms
+id spinnerClient
+id spinnerHotel
+id spinnerRoom
+id tvStats
+layout activity_add_booking
+layout activity_bookings
+layout activity_main
+layout activity_rooms
+string app_name
+string title_add_booking
+string title_bookings
+string title_main
+string title_rooms
+style Theme.Hotel

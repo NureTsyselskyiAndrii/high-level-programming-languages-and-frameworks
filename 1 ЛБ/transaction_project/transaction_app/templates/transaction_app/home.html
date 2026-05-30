@@ -1,0 +1,47 @@
+{% extends 'transaction_app/base.html' %}
+{% block content %}
+<h2>Додати транзакцію</h2>
+<div class="form-box">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Додати</button>
+    </form>
+</div>
+
+<h2>Усі транзакції</h2>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Опис</th>
+                <th>Сума</th>
+                <th>Тип</th>
+                <th>Категорія</th>
+                <th>Дата</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in transactions %}
+            <tr>
+                <td style="font-weight: 500;">{{ t.description }}</td>
+                <td style="font-weight: 600;">{{ t.amount }} грн</td>
+                <td><span class="{{ t.type }}">{{ t.get_type_display }}</span></td>
+                <td>
+                    {% if t.category %}
+                        <span style="background: var(--primary-light); color: var(--primary-hover); padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: 500;">{{ t.category.name }}</span>
+                    {% else %}
+                        <span style="color: var(--text-muted); font-style: italic; font-size: 0.9rem;">—</span>
+                    {% endif %}
+                </td>
+                <td style="color: var(--text-muted);">{{ t.created_at|date:"d.m.Y H:i" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="empty-row">Немає транзакцій</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

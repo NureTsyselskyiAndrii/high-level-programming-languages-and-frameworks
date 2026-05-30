@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hotel Booking</string>
+    <string name="title_main">Hotel Booking Management</string>
+    <string name="title_rooms">Available Rooms</string>
+    <string name="title_add_booking">New Booking</string>
+    <string name="title_bookings">Booking History</string>
+</resources>

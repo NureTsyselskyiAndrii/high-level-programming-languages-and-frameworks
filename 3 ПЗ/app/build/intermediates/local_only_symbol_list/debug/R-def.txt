@@ -1,0 +1,22 @@
+R_DEF: Internal format may change without notice
+local
+id btnCalc
+id btnClear
+id btnGoToGame
+id btnGuess
+id btnNewGame
+id etLetter
+id etNum1
+id etNum2
+id tvAttempts
+id tvEmoji
+id tvFormula
+id tvHint
+id tvResult
+id tvScore
+id tvUsed
+id tvWord
+layout activity_game
+layout activity_main
+string app_name
+style Theme.MultiplyAndGame
